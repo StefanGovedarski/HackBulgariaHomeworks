@@ -10,12 +10,6 @@ namespace HackTask
     {
         public void Execute()
         {
-            Console.WriteLine("UNDONE!");
-            Console.WriteLine(@"
-    Check if given integer n is palindrome -> IsIntPalindrome(n)
-    Largets palindrome, smaller than given N -> GetLargestPalindrome(N)
-
-For example, 1234321 is an integer palindrome.\n\n");
             Console.WriteLine("Input integer to check if its a palindrome and to print one the nearest smaller palindrome integer: ");
             int n = Int32.Parse(Console.ReadLine());
             Console.WriteLine(IsIntPalindrome(n));
@@ -25,9 +19,9 @@ For example, 1234321 is an integer palindrome.\n\n");
         {
             int valueKeeper = n;
             string nString = "";
-            while(n>0)
+            while (n > 0)
             {
-                nString += (n%10);
+                nString += (n % 10);
                 n = n / 10;
             }
             if (valueKeeper == Int32.Parse(nString))
@@ -39,7 +33,17 @@ For example, 1234321 is an integer palindrome.\n\n");
         int GetLargestPalindrome(int n)
         {
             int largestP = 0;
-            string integerString = n.ToString();
+            n = n - 1;
+            while(IsIntPalindrome(n)== false)
+            {
+                n--;
+            }
+            Console.WriteLine(n);
+            return largestP;
+        }
+    }
+}        // opit da go napravq bez While cikul za nqkoi den... 
+        /*string integerString = n.ToString();
             char[] integerChars = integerString.ToCharArray();
             int[] integerInts = new int[integerString.Length];
             int len = integerString.Length;
@@ -182,7 +186,7 @@ For example, 1234321 is an integer palindrome.\n\n");
 
 
 
-            return largestP;
-        }
+
     }
 }
+*/
