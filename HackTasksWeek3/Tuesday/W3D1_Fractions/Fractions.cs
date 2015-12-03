@@ -43,18 +43,14 @@ namespace W3D1_Fractions
         public override bool Equals(object obj)
         {
             bool eq = false;
-            try
+            if (this is Fractions && obj is Fractions)
             {
                 Fractions obj1 = this;
                 Fractions obj2 = (Fractions)obj;
-                if( ((float)obj1.numerator/obj1.denumerator) == ((float)obj2.numerator/obj2.denumerator))
+                if (((float)obj1.numerator / obj1.denumerator) == ((float)obj2.numerator / obj2.denumerator))
                 {
                     eq = true;
                 }
-            }
-            catch
-            {
-                new Exception("There was a problem with converting your objects to a fraction , fractions take two integer as input.Please change your input and try again"); 
             }
 
             return eq;
@@ -82,9 +78,6 @@ namespace W3D1_Fractions
             return !(a == b);
         }
 
-
-
-
         public override int GetHashCode()
         {
             unchecked
@@ -94,6 +87,56 @@ namespace W3D1_Fractions
                 hash = hash * 23 + denumerator.GetHashCode();
                 return hash;
             }
+        }
+
+        public static Fractions operator + (Fractions a,Fractions b)
+        {
+            Fractions result = new Fractions(a.numerator*b.denumerator + b.numerator+a.denumerator ,a.denumerator * b.denumerator );
+            return result;
+        }
+        public static Fractions operator -(Fractions a, Fractions b)
+        {
+            Fractions result = new Fractions(a.numerator * b.denumerator - b.numerator + a.denumerator, a.denumerator * b.denumerator);
+            return result;
+        }
+        public static Fractions operator *(Fractions a, Fractions b)
+        {
+            Fractions result = new Fractions(a.numerator * b.numerator,a.denumerator* b.denumerator);
+            return result;
+        }
+        public static Fractions operator /(Fractions a, Fractions b)
+        {
+            Fractions result = new Fractions(a.numerator * b.denumerator, a.denumerator * b.numerator);
+            return result;
+        }
+        public static double operator +(Fractions a, double b)
+        {
+            double something = a.numerator / a.denumerator;
+            double result =something + b;
+            return result;
+        }
+        public static double operator -(Fractions a, double b)
+        {
+            double something = a.numerator / a.denumerator;
+            double result = something + b;
+            return result;
+        }
+        public static double operator /(Fractions a, double b)
+        {
+            double something = a.numerator / a.denumerator;
+            double result = something / b;
+            return result;
+        }
+        public static double operator *(Fractions a, double b)
+        {
+            double something = a.numerator / a.denumerator;
+            double result = something * b;
+            return result;
+        }
+        public static explicit operator double(Fractions frac)
+        {
+            double b = frac.numerator / frac.denumerator;
+            return b;
         }
     }
 }
