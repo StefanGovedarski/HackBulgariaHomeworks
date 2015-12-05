@@ -12,18 +12,20 @@ namespace W3D1_GeometricFigures
         private List<Point> vector;
         private Point vectorDimension;
 
-        public Vector(params Point[] listOfCoordinates)
+        public Vector(params Point[] arrayOfCoordinates)
         {
-            foreach(Point coord in listOfCoordinates)
+            this.vector = new List<Point>();
+            foreach(Point coord in arrayOfCoordinates)
             {
-                vector.Add(coord);
+                this.vector.Add(coord);
             }
         }
         public Vector(Vector vec)
         {
-            for(int i=0;i<vec.vector.Count;i++)
+            this.vector = new List<Point>();
+            for (int i=0;i<vec.vector.Count;i++)
             {
-                vector.Add(vec.vector[i]);
+                this.vector.Add(vec.vector[i]);
             }
         }
         public Point this[int index]
@@ -39,10 +41,10 @@ namespace W3D1_GeometricFigures
         public int VectorLenght()
         {
             int len = 0;
-            foreach(Point a in vector)
-            {
-                len++;
-            }
+           foreach (Point a in this.vector)
+                {
+                    len++;
+                }
             return len;
         }
         public override bool Equals(object obj)
