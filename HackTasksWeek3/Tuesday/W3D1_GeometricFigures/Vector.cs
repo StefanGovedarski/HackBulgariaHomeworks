@@ -190,6 +190,9 @@ namespace W3D1_GeometricFigures
         public static int operator * (Vector a ,Vector b)
         {
             int dotProduct = 0;
+            int len1 = a.VectorLenght();
+            int len2 = b.VectorLenght();
+            dotProduct = len1 * len2;
 
             return dotProduct;
         }
