@@ -20,14 +20,14 @@ namespace W3D1_GeometricFigures
             int len = result.VectorLenght();
             for(int i=0;i<len; i++)
             {
-                Console.Write(result[i]);
+                Console.Write(result[i] + " ");
             }
             result = vec + len;
             Console.WriteLine();
             result = vec * 3;
             for (int i = 0; i < len; i++)
             {
-                Console.Write(result[i]);
+                Console.Write(result[i]+ " ");
             }
 
 
