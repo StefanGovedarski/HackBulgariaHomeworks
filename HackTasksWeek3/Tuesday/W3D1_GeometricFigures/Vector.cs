@@ -185,14 +185,13 @@ namespace W3D1_GeometricFigures
         }
 
         //define operator * - the dot product of 2 vectors (check if the 2 vectors have the same dimension!)
-        //will use the old school formula a.b=ax*bx+ay*by since im not really sure what else to do...
 
         public static int operator * (Vector a ,Vector b)
         {
             int dotProduct = 0;
             int len1 = a.VectorLenght();
             int len2 = b.VectorLenght();
-            dotProduct = len1 * len2;
+            dotProduct = (len1 + len2) *(len1+ len2);
 
             return dotProduct;
         }
