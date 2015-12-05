@@ -16,7 +16,12 @@ namespace W3D1_Fractions
             Console.WriteLine(obj.Equals(obj2));
             bool eq = (obj == obj2);
             Console.WriteLine(eq);
-            obj.ToString();
+            Fractions result = obj + obj2;
+            Console.WriteLine(result);
+            result = obj * obj2;
+            Console.WriteLine(result);
+            result = obj / obj2;
+            Console.WriteLine(result);
 
         }
 
