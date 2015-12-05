@@ -10,21 +10,27 @@ namespace W3D1_GeometricFigures
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(2, 3);
-            Point p2 = new Point(2, 1);
-            Point p3 = new Point(2, 2);
-            Point p4 = new Point(2, 5);
-            Point[] p12arr = new Point[2];
-            p12arr[0] = p1;
-            p12arr[1] = p2;
-            Point[] p34arr = new Point[2];
-            p34arr[0] = p3;
-            p34arr[1] = p4;
-            Vector vec1 = new Vector(p12arr);
-            Vector vec2 = new Vector(p34arr);
-            Vector vec =  vec1 + vec2;
-            Console.WriteLine(vec);
-            
+
+
+            int[] arr1 = new int[5] { 1, 3, 5, 3, 2 };
+            int[] arr2 = new int[5] { 3, 3, 4, 7, 2 };
+            Vector vec = new Vector(arr1);
+            Vector vec2 = new Vector(arr2);
+            Vector result = vec + vec2;
+            int len = result.VectorLenght();
+            for(int i=0;i<len; i++)
+            {
+                Console.Write(result[i]);
+            }
+            result = vec + len;
+            Console.WriteLine();
+            result = vec * 3;
+            for (int i = 0; i < len; i++)
+            {
+                Console.Write(result[i]);
+            }
+
+
 
         }
     }

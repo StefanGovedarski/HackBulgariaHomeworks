@@ -9,43 +9,38 @@ namespace W3D1_GeometricFigures
     class Vector
     {
 
-        private List<Point> vector;
-        private Point vectorDimension;
+        private List<int> vector;
+        private int vectorDimension;
 
-        public Vector(params Point[] arrayOfCoordinates)
+        public Vector(params int[] arrayOfCoordinates)
         {
-            this.vector = new List<Point>();
-            foreach(Point coord in arrayOfCoordinates)
+            this.vector = new List<int>();
+            for(int i =0;i < arrayOfCoordinates.Length;i++)
             {
-                this.vector.Add(coord);
+                this.vector.Add(arrayOfCoordinates[i]);
             }
         }
         public Vector(Vector vec)
         {
-            this.vector = new List<Point>();
+            this.vector = new List<int>();
             for (int i=0;i<vec.vector.Count;i++)
             {
                 this.vector.Add(vec.vector[i]);
             }
         }
-        public Point this[int index]
+        public int this[int index]
         {
             get { return vector[index]; }
             set { vector[index] = value; }
         }
-        public Point VectorDimension
+        public int VectorDimension
         {
             get {return vectorDimension; }
-            set {this.vectorDimension = this.vector[0]; }
+            set {this.vectorDimension = vector.Count; }
         }
         public int VectorLenght()
         {
-            int len = 0;
-           foreach (Point a in this.vector)
-                {
-                    len++;
-                }
-            return len;
+            return this.vector.Count;
         }
         public override bool Equals(object obj)
         {
@@ -113,8 +108,7 @@ namespace W3D1_GeometricFigures
                 int hash = 17;
                 foreach (var el in vector)
                 {
-                    hash = hash * 23 + el.x.GetHashCode();
-                    hash = hash * 23 + el.y.GetHashCode();
+                    hash = hash * 23 + el.GetHashCode();
                 }
                 return hash;
             }
@@ -127,36 +121,11 @@ namespace W3D1_GeometricFigures
             {
                 throw new Exception("The vectors must be from the same dimension!");
             }
-            LineSegment line = new LineSegment(a.vector[a.vector.Count - 1], (b.vector[b.vector.Count - 1]));
-            int newVecLen = (int)line.GetLenght(line);
-            Point[] PointArrayForConstructor = new Point[newVecLen];
-            if(a.vector[0].x == b.vector[0].x && a.vector[0].y > b.vector[0].y )
+            int newVecLen = a.VectorLenght();
+            int[] PointArrayForConstructor = new int[newVecLen];
+            for(int i=0;i<PointArrayForConstructor.Length;i++)
             {
-                for(int i=0,y=a.vector[0].y;i<newVecLen;i++,y--)
-                {
-                    PointArrayForConstructor[i] =  new Point(a.vector[0].x, y);
-                }
-            }
-            if (a.vector[0].x == b.vector[0].x && a.vector[0].y < b.vector[0].y)
-            {
-                for (int i = 0, y = a.vector[0].y; i < newVecLen; i++, y++)
-                {
-                    PointArrayForConstructor[i] = new Point(a.vector[0].x, y);
-                }
-            }
-            if (a.vector[0].y == b.vector[0].y && a.vector[0].x > b.vector[0].x)
-            {
-                for (int i = 0, x = a.vector[0].x; i < newVecLen; i++, x--)
-                {
-                    PointArrayForConstructor[i] = new Point(x,a.vector[0].y);
-                }
-            }
-            if (a.vector[0].y == b.vector[0].y && a.vector[0].x < b.vector[0].x)
-            {
-                for (int i = 0, x = a.vector[0].x; i < newVecLen; i++, x++)
-                {
-                    PointArrayForConstructor[i] = new Point(x, a.vector[0].y);
-                }
+                PointArrayForConstructor[i] = a[i] + b[i];
             }
             Vector newbie = new Vector(PointArrayForConstructor);
             return newbie;
@@ -172,11 +141,10 @@ namespace W3D1_GeometricFigures
         public static Vector operator + (Vector a, int b)
         {
             int aLen = a.VectorLenght();
-            Point[] newVecArrayForConstructor = new Point[aLen];
+            int[] newVecArrayForConstructor = new int[aLen];
             for(int i=0; i < aLen; i++)
             {
-                Point point = new Point(a.vector[i].x + b, a.vector[i].y + b);
-                newVecArrayForConstructor[i] = point;
+                newVecArrayForConstructor[i] = a[i] + b ;
             }
             Vector newVector = new Vector(newVecArrayForConstructor);
             return newVector;
@@ -184,11 +152,11 @@ namespace W3D1_GeometricFigures
         public static Vector operator -(Vector a, int b)
         {
             int aLen = a.VectorLenght();
-            Point[] newVecArrayForConstructor = new Point[aLen];
+            int[] newVecArrayForConstructor = new int[aLen];
             for (int i = 0; i < aLen; i++)
             {
-                Point point = new Point(a.vector[i].x - b, a.vector[i].y - b);
-                newVecArrayForConstructor[i] = point;
+
+                newVecArrayForConstructor[i] = a[i] - b;
             }
             Vector newVector = new Vector(newVecArrayForConstructor);
             return newVector;
@@ -196,11 +164,10 @@ namespace W3D1_GeometricFigures
         public static Vector operator *(Vector a, int b)
         {
             int aLen = a.VectorLenght();
-            Point[] newVecArrayForConstructor = new Point[aLen];
+            int[] newVecArrayForConstructor = new int[aLen];
             for (int i = 0; i < aLen; i++)
             {
-                Point point = new Point(a.vector[i].x * b, a.vector[i].y * b);
-                newVecArrayForConstructor[i] = point;
+                newVecArrayForConstructor[i] =a[i]* b;
             }
             Vector newVector = new Vector(newVecArrayForConstructor);
             return newVector;
@@ -208,11 +175,10 @@ namespace W3D1_GeometricFigures
         public static Vector operator /(Vector a, int b)
         {
             int aLen = a.VectorLenght();
-            Point[] newVecArrayForConstructor = new Point[aLen];
+            int[] newVecArrayForConstructor = new int[aLen];
             for (int i = 0; i < aLen; i++)
-            {
-                Point point = new Point(a.vector[i].x / b, a.vector[i].y / b);
-                newVecArrayForConstructor[i] = point;
+            { 
+                newVecArrayForConstructor[i] = a[i] /b;
             }
             Vector newVector = new Vector(newVecArrayForConstructor);
             return newVector;
@@ -224,19 +190,7 @@ namespace W3D1_GeometricFigures
         public static int operator * (Vector a ,Vector b)
         {
             int dotProduct = 0;
-            int aX = (a.vector[a.vector.Count - 1].x - a.vector[0].x);
-            if (aX < 0)
-                aX *= -1;
-            int bX = (b.vector[b.vector.Count - 1].x - b.vector[0].x);
-            if (bX < 0)
-                bX *= -1;
-            int aY = (a.vector[a.vector.Count - 1].y - a.vector[0].y);
-            if (aY < 0)
-                aY *= -1;
-            int bY = (b.vector[b.vector.Count - 1].y - b.vector[0].y);
-            if (bY < 0)
-                bY *= -1;
-            dotProduct = (aX*bX) + (aY*bY);
+
             return dotProduct;
         }
 
