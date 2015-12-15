@@ -12,10 +12,11 @@ namespace Week3VatTAX
         private readonly double VATTax;
         private readonly bool Default;
 
-        public CountryVatTAX(string countryID , double tax, bool isDefault = false)
+        public CountryVatTAX(string countryID , double tax, bool isDefault)
         {
             CountryID = countryID;
             VATTax = tax;
+            Default = isDefault;
         }
         public string countryID
         {

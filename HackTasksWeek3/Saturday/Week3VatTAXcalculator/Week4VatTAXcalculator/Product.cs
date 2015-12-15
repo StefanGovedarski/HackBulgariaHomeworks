@@ -22,6 +22,7 @@ namespace Week3VatTAX
             this.productQuantity = amountOfTheProduct;
             this.productID = IDofTheProduct;
             this.productIsAvailableInThisCountry = CountryInWhichItIsAvailable;
+            AfterTaxCalc();
         }
 
         public double PrizeBeforTax{ get { return prizeBeforeTaxes; } }
@@ -36,16 +37,16 @@ namespace Week3VatTAX
             List<CountryVatTAX> list = new List<CountryVatTAX>
             {
                 new CountryVatTAX("Bulgaria", 0.2d, true),
-                new CountryVatTAX("Belgium", 0.19d),
-                new CountryVatTAX("Albania", 0.2d),
-                new CountryVatTAX("Greece", 0.11d),
-                new CountryVatTAX("Serbia", 0.27d),
-                new CountryVatTAX("Romania", 0.09d),
-                new CountryVatTAX("Turkey", 0.24d),
-                new CountryVatTAX("Macedonia", 0.22d),
-                new CountryVatTAX("Georgia", 0.19d),
-                new CountryVatTAX("Russia", 0.25d),
-                new CountryVatTAX("USA", 0.2d)
+                new CountryVatTAX("Belgium", 0.19d,false),
+                new CountryVatTAX("Albania", 0.2d,false),
+                new CountryVatTAX("Greece", 0.11d,false),
+                new CountryVatTAX("Serbia", 0.27d,false),
+                new CountryVatTAX("Romania", 0.09d,false),
+                new CountryVatTAX("Turkey", 0.24d,false),
+                new CountryVatTAX("Macedonia", 0.22d,false),
+                new CountryVatTAX("Georgia", 0.19d,false),
+                new CountryVatTAX("Russia", 0.25d,false),
+                new CountryVatTAX("USA", 0.2d,false)
             };
             double tax = 0;
             CalculateTax calculate = new CalculateTax(list);

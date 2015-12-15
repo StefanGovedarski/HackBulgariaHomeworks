@@ -27,6 +27,7 @@ namespace Week3VatTAX
         }
         public double Ordering(Order order)
         {
+            bool check = false;
             double amount = 0;
             for (int i = 0; i < order.ProductIDs.Count; i++)
             {
@@ -37,14 +38,13 @@ namespace Week3VatTAX
                         if (order.ProductQuantities[i] <= allProductsInTheShopInventory[j].ProductQuantity)
                         {
                             amount += allProductsInTheShopInventory[j].PrizeAfterTax * order.ProductQuantities[i];
+                            check = true;
                         }
-                        else
-                            Console.WriteLine("not enough of this item in stock.");
                     }
-                    else
-                        Console.WriteLine("Item does not exist in the shop");
                 }
             }
+            if (!check)
+                throw new Exception("Item does not exist or there is inseficient amount of it in store");
             return amount;
         }
     }

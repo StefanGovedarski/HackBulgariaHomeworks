@@ -21,7 +21,7 @@ namespace Week3VatTAX
             {
                 if(country.countryID == id )
                 {
-                    Tax =( price / 100) * country.VatTax;
+                    Tax =( price / 100) * country.VatTax*100;
                 }
             }
             if (Tax != 0)
@@ -41,7 +41,7 @@ namespace Week3VatTAX
             {
                 if (country.defaultt)
                 {
-                    Tax = (price / 100) * country.VatTax;
+                    Tax = (price / 100) * country.VatTax*100;
                 }
             }
 
