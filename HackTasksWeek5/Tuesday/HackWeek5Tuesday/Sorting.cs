@@ -12,7 +12,7 @@ namespace HackWeek5Tuesday
         {
             return BubbleAndSelectionSort.BubbleSortin(ListToBeSorted,Comparer<T>.Default);
         }
-        private static IList<T> BubbleSortin<T>(this IList<T> list ,IComparer<T> comparer)
+        private static IList<T> BubbleSortin<T>(IList<T> list ,IComparer<T> comparer)
         {
             for(int i=0;i<list.Count - 1;i++)
             {
