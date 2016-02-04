@@ -97,6 +97,7 @@ namespace XMLclassBuild
                     }
                 }
                 sw.Close();
+                openedTags.Clear();
             }
         }
     }
