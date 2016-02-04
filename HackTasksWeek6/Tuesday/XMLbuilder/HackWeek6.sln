@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLclassBuild", "XMLclassBuild\XMLclassBuild.csproj", "{BEC7EDE4-74F1-4B30-B72F-05F8ED752CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLConsoleApp", "XMLConsoleApp\XMLConsoleApp.csproj", "{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEC7EDE4-74F1-4B30-B72F-05F8ED752CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC7EDE4-74F1-4B30-B72F-05F8ED752CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC7EDE4-74F1-4B30-B72F-05F8ED752CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC7EDE4-74F1-4B30-B72F-05F8ED752CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
