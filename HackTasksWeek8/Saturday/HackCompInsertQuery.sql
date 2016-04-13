@@ -1,0 +1,71 @@
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (1,'Big Boss',NULL,NULL,NULL,NULL);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (2,'Will Smith','willsmth@gmail.com',CAST(N'1975.3.15' AS DATE),1,3);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (3,'Konan The Barbarian','savage@gmail.com',CAST(N'1991.12.31' AS DATE),1,1);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (4,'Rohan The Viking','viking@gmail.com',CAST(N'1930.11.1' AS DATE),3,1);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (5,'Franko the Frank','franko@gmail.com',CAST(N'1950.7.17' AS DATE),3,1);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (6,'Bai Krustio','naselo@gmail.com',CAST(N'1955.8.25' AS DATE),1,2);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (7,'Bai Ivan','selo@gmail.com',CAST(N'1975.3.15' AS DATE),6,2);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (8,'Penka','penka@gmail.com',CAST(N'1975.3.15' AS DATE),6,2);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (9,'Brat Pitt','bratpitt@gmail.com',CAST(N'1973.4.4' AS DATE),2,3);
+INSERT INTO Employees(EmployeeID,Name,Email,DateOfBirth,Manager,Department) VALUES (10,'Angelina Jolie','angelina@gmail.com',CAST(N'1976.5.10' AS DATE),2,3);
+
+INSERT INTO Departments(DepartmentID,Name) VALUES(1,'Combat');
+INSERT INTO Departments(DepartmentID,Name)VALUES(2,'Production');
+INSERT INTO Departments(DepartmentID,Name) VALUES(3,'Acting');
+
+
+INSERT INTO Categories(CategoryID,Name) VALUES(1,'Foods');
+INSERT INTO Categories(CategoryID,Name) VALUES(2,'Books');
+INSERT INTO Categories(CategoryID,Name) VALUES(3,'Hardware');
+INSERT INTO Categories(CategoryID,Name) VALUES(4,'Software');
+
+
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(1,'Grape',10,1);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(2,'Apple',15,1);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(3,'Orange',30,1);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(4,'Banana',23,1);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(5,'Tales of Discworld',45,2);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(6,'The Wheel Of Time',60,2);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(7,'Lord Of The Rings',100,2);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(8,'Smart Phone',800,3);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(9,'Dumb Phone',100,3);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(10,'MP3 player',450,3);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(11,'Antenna',50,3);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(12,'HackBgApp',1000,4);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(13,'Panda Social Network App',2000,4);
+INSERT INTO Products(ProductID,Name,SinglePrice,Category) VALUES(14,'Home-made App',1,4);
+
+INSERT INTO Customers(CustomerID,Name,Email,Adress,Discount) VALUES(1,'Peshko Nasheneca','peshko@abv.bg','Sofia,pesho street 2005',15);
+INSERT INTO Customers(CustomerID,Name,Email,Adress,Discount) VALUES(2,'Gosho Traktora','gosho@abv.bg','Sofia,gosho street 20',null);
+INSERT INTO Customers(CustomerID,Name,Email,Adress,Discount) VALUES(3,'Ivan Mashinista','Ivan@gmail.bg','Sofia,bul Iskur 33',25);
+INSERT INTO Customers(CustomerID,Name,Email,Adress,Discount) VALUES(4,'Nikola Vapcarov','koko@gmail.bg','Sofia,vitoshka 1',null);
+INSERT INTO Customers(CustomerID,Name,Email,Adress,Discount) VALUES(5,'Prezidenta Plevneliev','prezidenta@gmail.bg','Sofia,Dondukov 10',90);
+INSERT INTO Customers(CustomerID,Name,Email,Adress,Discount) VALUES(6,'Stefan Govedarski','stefo@abv.bg','Sofia,vitoshka 30',null);
+INSERT INTO Customers(CustomerID,Name,Email,Adress,Discount) VALUES(7,'Bojidar Shvarcenegur','fenNaArnold@abv.bg','Sofia,Atletik Fitness',null);
+
+INSERT INTO Orders(OrderID,Customer,TotalPrince,[Date]) VALUES(1,1,250,CAST(N'2016.1.20' AS DATE));
+INSERT INTO Orders(OrderID,Customer,TotalPrince,[Date]) VALUES(2,2,3500,CAST(N'2016.2.11' AS DATE));
+INSERT INTO Orders(OrderID,Customer,TotalPrince,[Date]) VALUES(3,3,400,CAST(N'2016.1.23' AS DATE));
+INSERT INTO Orders(OrderID,Customer,TotalPrince,[Date]) VALUES(4,4,5000,CAST(N'2016.3.10' AS DATE));
+INSERT INTO Orders(OrderID,Customer,TotalPrince,[Date]) VALUES(5,5,1100,CAST(N'2016.1.3' AS DATE));
+INSERT INTO Orders(OrderID,Customer,TotalPrince,[Date]) VALUES(6,6,50,CAST(N'2016.1.29' AS DATE));
+INSERT INTO Orders(OrderID,Customer,TotalPrince,[Date]) VALUES(7,7,1450,CAST(N'2016.2.1' AS DATE));
+
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(1,1);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(1,2);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(1,11);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(2,8);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(2,9);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(3,5);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(3,12);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(3,3);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(4,12);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(4,2);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(5,12);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(5,10);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(6,11);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(7,5);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(7,2);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(7,1);
+INSERT INTO OrderProducts(OrderId,ProductID) VALUES(7,7);
+
