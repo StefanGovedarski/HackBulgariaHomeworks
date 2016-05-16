@@ -20,7 +20,7 @@ namespace XMLclassBuild
             {
                 try
                 {
-                    File.Create(TextFilePathName);
+                    File.Create(TextFilePathName).Close();
                 }
                 catch
                 {
@@ -31,6 +31,15 @@ namespace XMLclassBuild
             {
                 sw = new StreamWriter(TextFilePathName);
             }
+        }
+
+        public Dictionary<string, int> XmlTags
+        {
+            get { return xmlTags; }
+        }
+        public List<string> OpenedTags
+        {
+            get { return openedTags; }
         }
 
         public void OpenTag(string TagName)

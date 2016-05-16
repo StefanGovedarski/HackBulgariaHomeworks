@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLclassBuild", "XMLclassBu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLConsoleApp", "XMLConsoleApp\XMLConsoleApp.csproj", "{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLbuilder.Tests", "XMLbuilderTests\XMLbuilder.Tests.csproj", "{762129A4-E312-45C3-9EE1-6289B86929F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3BDFDD6-7E14-4AEF-AA16-7BABE1F830EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762129A4-E312-45C3-9EE1-6289B86929F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762129A4-E312-45C3-9EE1-6289B86929F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762129A4-E312-45C3-9EE1-6289B86929F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762129A4-E312-45C3-9EE1-6289B86929F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

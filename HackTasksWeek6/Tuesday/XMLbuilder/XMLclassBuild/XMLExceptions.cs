@@ -9,14 +9,14 @@ using System.Runtime.Serialization;
 namespace XMLclassBuild
 {
     [Serializable]
-    class XMLTagIsAlreadyOpen : Exception
+     public class XMLTagIsAlreadyOpen : Exception
     {
         public XMLTagIsAlreadyOpen() : base() { }
         public XMLTagIsAlreadyOpen(string message) : base(message) { }
         public XMLTagIsAlreadyOpen(string message, Exception innerException) : base(message, innerException) { }
         public XMLTagIsAlreadyOpen(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
-    class ThereAreNoOpenTags : Exception
+    public class ThereAreNoOpenTags : Exception
     {
         public ThereAreNoOpenTags() : base() { }
         public ThereAreNoOpenTags(string message) : base(message) { }
